@@ -1,0 +1,6 @@
+resources:
+  - catalog-source.yaml
+  - subscription.yaml
+  - wordress-sample.yaml
+commonLabels:
+  name: test
