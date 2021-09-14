@@ -2,5 +2,6 @@ resources:
   - catalog-source.yaml
   - subscription.yaml
   - wordpress-sample.yaml
+  - route.yaml
 commonLabels:
   name: test
