@@ -4,3 +4,5 @@ namePrefix: dev-
 namespace: dev
 commonLabels:
   env: dev
+commonAnnotations:
+  channel: dev-demo
