@@ -1,0 +1,6 @@
+resources:
+- ../../base
+namePrefix: prod-
+namespace: prod
+commonLabels:
+  env: prod
