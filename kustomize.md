@@ -15,6 +15,7 @@
 
 ### Example
 - 
+```
 ├── base
 │   ├── deployment.yaml
 │   ├── kustomization.yaml
@@ -29,7 +30,7 @@
     └── staging
         ├── kustomization.yaml
         └── service-nodeport.yaml
-
+```
 ### References
 - overview :
     - https://www.youtube.com/watch?v=Twtbg6LFnAg&t=137s
