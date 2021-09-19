@@ -3,6 +3,10 @@ kind: Subscription
 metadata:
   name: wordpress-operator
   namespace: openshift-operators
+  generateName: wordpress-subs
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "10"
 spec:
   channel: alpha
   name: wordpress-operator
