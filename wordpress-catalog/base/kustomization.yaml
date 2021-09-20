@@ -1,0 +1,4 @@
+---
+resources:
+  - wordpress-sample.yaml
+  - route.yaml

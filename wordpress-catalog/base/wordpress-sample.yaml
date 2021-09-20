@@ -3,7 +3,7 @@ kind: Wordpress
 metadata:
   name: wordpress-sample
   annotations:
-    argocd.argoproj.io/sync-wave: "100"
+    argocd.argoproj.io/sync-wave: "300"
 spec:
   # Add fields here
   sqlrootpassword: password
