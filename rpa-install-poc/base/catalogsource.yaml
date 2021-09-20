@@ -3,10 +3,10 @@ kind: CatalogSource
 metadata:
   name: opencloud-operators
   namespace: openshift-marketplace
-  generateName: cs-catalog-src-
-  annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/sync-wave: "1"
+  #generateName: cs-catalog-src-
+  #annotations:
+  #  argocd.argoproj.io/hook: PreSync
+  #  argocd.argoproj.io/sync-wave: "1"
 spec:
   displayName: IBMCS Operators
   publisher: IBM
@@ -18,10 +18,10 @@ kind: CatalogSource
 metadata:
   name: ibm-operator-catalog
   namespace: openshift-marketplace
-  generateName: rpa-catalog-src-
-  annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/sync-wave: "10"
+#  generateName: rpa-catalog-src-
+#  annotations:
+#    argocd.argoproj.io/hook: PreSync
+#    argocd.argoproj.io/sync-wave: "10"
 spec:
   displayName: IBM Operator Catalog
   image: docker.io/ibmcom/ibm-operator-catalog:latest

@@ -3,10 +3,10 @@ kind: Subscription
 metadata:
   name: rpa-subscription
   namespace: ibmrpa
-  generateName: rpa-subs-
-  annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/sync-wave: "30"
+#  generateName: rpa-subs-
+#  annotations:
+#    argocd.argoproj.io/hook: PreSync
+#    argocd.argoproj.io/sync-wave: "30"
 spec:
   channel: v1.1
   installPlanApproval: Automatic
