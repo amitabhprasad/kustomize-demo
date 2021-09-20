@@ -2,6 +2,9 @@ apiVersion: wordpress.example.com/v1
 kind: Wordpress
 metadata:
   name: wordpress-sample
+  annotations:
+    argocd.argoproj.io/hook: sync
+    argocd.argoproj.io/sync-wave: "100"
 spec:
   # Add fields here
   sqlrootpassword: password
