@@ -1,0 +1,53 @@
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: wordpress-catalog
+  namespace: openshift-operators
+  annotations:
+    argocd.argoproj.io/sync-wave: "110"
+spec:
+  displayName: wordpress-operator
+  publisher: ABC Inc.
+  sourceType: grpc
+  image: amitabhprasad/wordpress-operator-catalog:v0.0.1
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: wordpress-operator
+  namespace: openshift-operators
+  annotations:
+    argocd.argoproj.io/sync-wave: "120"
+spec:
+  channel: alpha
+  name: wordpress-operator
+  source: wordpress-catalog
+  sourceNamespace: openshift-operators
+  installPlanApproval: Automatic
+  startingCSV: wordpress-operator.v0.0.1
+---
+apiVersion: wordpress.example.com/v1
+kind: Wordpress
+metadata:
+  name: wordpress-sample
+  annotations:
+    argocd.argoproj.io/sync-wave: "300"
+spec:
+  # Add fields here
+  sqlrootpassword: password
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: wordpress
+  annotations:
+    argocd.argoproj.io/sync-wave: "400"
+spec:
+  path: /
+  to:
+    kind: Service
+    name: wordpress
+    weight: 100
+  port:
+    targetPort: 80
