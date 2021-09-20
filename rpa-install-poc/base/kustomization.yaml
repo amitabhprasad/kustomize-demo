@@ -1,0 +1,7 @@
+resources:
+  - catalogsource.yaml
+  - operator-group.yaml
+  - subscription.yaml
+  - rpa-sample.yaml
+commonLabels:
+  name: test

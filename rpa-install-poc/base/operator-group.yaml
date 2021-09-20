@@ -1,0 +1,12 @@
+apiVersion: operators.coreos.com/v1alpha2
+kind: OperatorGroup
+metadata:
+  name: rpa-group
+  namespace: ibmrpa
+  generateName: og-
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "20"
+spec:
+  targetNamespaces:
+  - ibmrpa

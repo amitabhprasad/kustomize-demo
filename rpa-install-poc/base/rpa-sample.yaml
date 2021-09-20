@@ -1,0 +1,33 @@
+apiVersion: rpa.automation.ibm.com/v1beta1
+kind: RoboticProcessAutomation
+metadata:
+  name: rpa-sample
+  namespace: ibmrpa
+spec:
+  api:
+    externalConnection:
+      secretName: rpa-db-rpa-sample
+    firstTenant:
+      groupMappings:
+        adminGroups: IBM RPA Plus
+        superAdminsGroups: IBM RPA Plus
+        userGroups: IBM RPA Plus
+      name: ibm
+      owner:
+        email: superuser@example.com
+        name: superuser
+    replicas: 1
+    smtp:
+      port: 587
+      server: smtp.example.com
+      userSecret:
+        secretName: rpa-smtp-rpa-sample
+    storage: {}
+  license:
+    accept: true
+  ocr:
+    replicas: 1
+  tls: {}
+  ui:
+    replicas: 1
+  version: 1.1.0
