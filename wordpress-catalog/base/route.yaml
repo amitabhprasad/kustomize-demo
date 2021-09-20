@@ -3,7 +3,7 @@ kind: Route
 metadata:
   name: wordpress
   annotations:
-    argocd.argoproj.io/sync-wave: "300"
+    argocd.argoproj.io/sync-wave: "400"
 spec:
   path: /
   to:
