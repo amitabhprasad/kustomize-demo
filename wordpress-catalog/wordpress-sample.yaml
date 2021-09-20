@@ -3,6 +3,7 @@ kind: Wordpress
 metadata:
   name: wordpress-sample
   annotations:
+    argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "100"
 spec:
   # Add fields here

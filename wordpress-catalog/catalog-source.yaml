@@ -4,6 +4,7 @@ metadata:
   name: wordpress-catalog
   namespace: openshift-operators
   annotations:
+    argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/sync-wave: "1"
 spec:
   displayName: wordpress-operator
