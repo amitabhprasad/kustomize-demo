@@ -45,7 +45,7 @@ spec:
       containers:
       - name: c
         image: quay.io/libpod/ubuntu
-        command: ["sh", "-c", "sleep infinity"]
+        command: ["sh", "-c", "sleep 20 & echo Hello"]
       restartPolicy: Never
 ---
 apiVersion: wordpress.example.com/v1
