@@ -27,6 +27,27 @@ spec:
   installPlanApproval: Automatic
   startingCSV: wordpress-operator.v0.0.1
 ---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: health-check
+  labels:
+    jobgroup: health-check
+  annotations:
+    argocd.argoproj.io/sync-wave: "150"
+spec:
+  template:
+    metadata:
+      name: health-check
+      labels:
+        jobgroup: health-check
+    spec:
+      containers:
+      - name: c
+        image: quay.io/libpod/ubuntu
+        command: ["sh", "-c", "sleep infinity"]
+      restartPolicy: Never
+---
 apiVersion: wordpress.example.com/v1
 kind: Wordpress
 metadata:
