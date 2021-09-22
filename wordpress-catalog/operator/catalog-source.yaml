@@ -2,7 +2,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:
   name: wordpress-catalog
-  namespace: openshift-marketplace
+  namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "7"
 spec:
