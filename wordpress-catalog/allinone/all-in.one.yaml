@@ -5,7 +5,7 @@ metadata:
   name: wordpress-catalog
   namespace: openshift-operators
   annotations:
-    argocd.argoproj.io/sync-wave: "110"
+    argocd.argoproj.io/sync-wave: "7"
 spec:
   displayName: wordpress-operator
   publisher: ABC Inc.
@@ -18,7 +18,7 @@ metadata:
   name: wordpress-operator
   namespace: openshift-operators
   annotations:
-    argocd.argoproj.io/sync-wave: "120"
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   channel: alpha
   name: wordpress-operator
