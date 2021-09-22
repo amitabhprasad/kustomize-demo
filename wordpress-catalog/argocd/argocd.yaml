@@ -1,0 +1,105 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ArgoCD
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "200"
+  creationTimestamp: "2021-09-22T06:42:30Z"
+  finalizers:
+  - argoproj.io/finalizer
+  generation: 3
+  name: argocd-cluster
+  namespace: argocd
+  resourceVersion: "60421"
+  uid: 700d396c-f153-4f29-a931-869ead273b55
+spec:
+  controller:
+    processors: {}
+  dex:
+    image: quay.io/ablock/dex
+    openShiftOAuth: true
+    version: openshift-connector
+  grafana:
+    enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: false
+  ha:
+    enabled: false
+  initialSSHKnownHosts: {}
+  prometheus:
+    enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: false
+  rbac:
+    policy: |
+      g, system:cluster-admins, role:admin
+  redis: {}
+  repo: {}
+  resourceCustomizations: |
+    operators.coreos.com/CatalogSource:
+     health.lua: |
+       hs = {}
+       if obj.status ~= nil then
+         if obj.status.connectionState ~= nil then
+           if obj.status.connectionState.lastObservedState ~= nil then
+             if obj.status.connectionState.lastObservedState == "READY" then
+               hs.status = "Healthy"
+               return hs
+             end
+           end
+         end
+       end
+       hs.status = "Progressing"
+       hs.message = "Unknown"
+       return hs
+    operators.coreos.com/Subscription:
+     health.lua: |
+       hs = {}
+       if obj.status ~= nil then
+         if obj.status.installedCSV ~= nil then
+           hs.status = "Healthy"
+           hs.message = "CSV Installed"
+           if obj.status.state ~= nil then
+             hs.message = obj.status.state
+           end
+           return hs
+         end
+       end
+       hs.status = "Progressing"
+       hs.message = "Unknown"
+       if obj.status.state ~= nil then
+         hs.message = obj.status.state
+       end
+       return hs
+  resourceExclusions: |
+    - apiGroups:
+      - tekton.dev
+      clusters:
+      - '*'
+      kinds:
+      - TaskRun
+      - PipelineRun
+  server:
+    autoscale:
+      enabled: false
+    grpc:
+      ingress:
+        enabled: false
+    ingress:
+      enabled: false
+    route:
+      enabled: true
+    service:
+      type: ""
+  tls:
+    ca: {}
+status:
+  applicationController: Running
+  dex: Running
+  phase: Available
+  redis: Running
+  repo: Running
+  server: Running
