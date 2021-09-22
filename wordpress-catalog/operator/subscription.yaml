@@ -2,13 +2,13 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   name: wordpress-operator
-  namespace: openshift-operators
+  namespace: openshift-marketplace
   annotations:
-    argocd.argoproj.io/sync-wave: "110"
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   channel: alpha
   name: wordpress-operator
   source: wordpress-catalog
-  sourceNamespace: openshift-operators
+  sourceNamespace: openshift-marketplace
   installPlanApproval: Automatic
   startingCSV: wordpress-operator.v0.0.1
