@@ -4,7 +4,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "20"
   name: sl-demo-app
-  namespace: {{.Values.metadata.individual_namespace}}
+  namespace: {{ .Values.metadata.individual_namespace }}
 spec:
   ports:
     - name: http
