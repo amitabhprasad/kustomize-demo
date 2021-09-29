@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sl-demo-app
+  namespace: {{.Values.metadata.individual_namespace}}
 spec:
   selector:
     matchLabels:
