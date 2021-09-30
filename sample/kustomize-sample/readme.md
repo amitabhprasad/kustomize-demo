@@ -1,6 +1,7 @@
 
 
 
+```
 .
 ├── base
 │   ├── kustomization.yaml
@@ -12,5 +13,7 @@
 └── namespace-b
     ├── kustomization.yaml
     └── namespace.yaml
+```
 
-[Kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/multibases/multi-namespace.md)
+
+[Kustomize ref](https://github.com/kubernetes-sigs/kustomize/blob/master/examples/multibases/multi-namespace.md)
