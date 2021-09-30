@@ -2,17 +2,14 @@
 
 
 ```
-.
 ├── base
 │   ├── kustomization.yaml
-│   └── pod.yaml
-├── kustomization.yaml
-├── namespace-a
-│   ├── kustomization.yaml
 │   └── namespace.yaml
-└── namespace-b
+├── kustomization.yaml
+├── customer-a
+│   ├── kustomization.yaml
+└── customer-b
     ├── kustomization.yaml
-    └── namespace.yaml
 ```
 
 
