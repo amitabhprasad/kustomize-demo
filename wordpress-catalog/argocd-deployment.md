@@ -106,9 +106,7 @@ data:
     - Using Application
         https://github.com/amitabhprasad/kustomize-demo/blob/main/wordpress-catalog/allinone/all-in.one.yaml
 
-### 
-
-- Reference 
+### Reference 
     https://www.youtube.com/watch?v=c4v7wGqKcEY
     https://100daysofkubernetes.io/tools/argo.html
     https://argo-cd.readthedocs.io/en/stable/operator-manual/health/
