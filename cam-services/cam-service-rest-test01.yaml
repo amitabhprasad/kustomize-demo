@@ -1,0 +1,17 @@
+---
+apiVersion: cloudautomationmgr.ibm.com/v1alpha1
+kind: Service
+metadata:
+  name: service-test-rest-4
+  namespace: default
+spec:
+  connection: camDc2Rtp
+  service:
+    action: Provision
+    instance_plan: standard
+    name: rest-service
+    parameters:
+      specifications:
+        parameters:
+          vSphereConfig: vSphere-CAMDC2
+      templateParameters: []
