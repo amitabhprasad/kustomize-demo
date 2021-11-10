@@ -2,7 +2,7 @@
 apiVersion: cloudautomationmgr.ibm.com/v1alpha1
 kind: Service
 metadata:
-  name: service-test-rest-4
+  name: service-test-rest-5
   namespace: default
 spec:
   connection: camDc2Rtp
