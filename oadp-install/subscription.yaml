@@ -5,6 +5,9 @@ metadata:
 ---
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
+metadata:
+  name: bcdr-cloudrock-2v6br
+  namespace: bcdr-cloudrock
 spec:
   targetNamespaces:
   - bcdr-cloudrock
@@ -13,7 +16,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
   labels:
-    operators.coreos.com/oadp-operator.openshift-adp: ''
+    operators.coreos.com/oadp-operator.bcdr-cloudrock: ''
   name: oadp-operator
   namespace: bcdr-cloudrock
 spec:
